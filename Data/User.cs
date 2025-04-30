@@ -1,6 +1,4 @@
-﻿using e_commerce.Data.Models;
-using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
+﻿
 using System.Net;
 
 namespace E_CommerceProject.Data

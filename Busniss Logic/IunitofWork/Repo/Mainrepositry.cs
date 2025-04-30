@@ -9,41 +9,41 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
     public class Mainrepositry<mdl> : IMainrepositry<mdl> where mdl : class
     {
 
-        public Mainrepositry(database context)
+        public Mainrepositry(database db)
         {
-            this.context = context;
+            this.db = db;
         }
 
-        protected database context;
+        protected database db;
 
         public mdl FindById(int id)
         {
-            return context.Set<mdl>().Find(id);
+            return db.Set<mdl>().Find(id);
         }
 
         public mdl SelectOne(Expression<Func<mdl, bool>> match)
         {
-            return context.Set<mdl>().SingleOrDefault(match);
+            return db.Set<mdl>().SingleOrDefault(match);
         }
 
         public IEnumerable<mdl> FindAll()
         {
-            return context.Set<mdl>().ToList();
+            return db.Set<mdl>().ToList();
         }
 
         public async Task<mdl> FindByIdAsync(int id)
         {
-            return await context.Set<mdl>().FindAsync(id);
+            return await db.Set<mdl>().FindAsync(id);
         }
 
         public async Task<IEnumerable<mdl>> FindAllAsync()
         {
-            return await context.Set<mdl>().ToListAsync();
+            return await db.Set<mdl>().ToListAsync();
         }
 
         public IEnumerable<mdl> FindAll(params string[] agers)
         {
-            IQueryable<mdl> query = context.Set<mdl>();
+            IQueryable<mdl> query = db.Set<mdl>();
 
             if (agers.Length > 0)
             {
@@ -58,7 +58,7 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
 
         public async Task<IEnumerable<mdl>> FindAllAsync(params string[] agers)
         {
-            IQueryable<mdl> query = context.Set<mdl>();
+            IQueryable<mdl> query = db.Set<mdl>();
 
             if (agers.Length > 0)
             {
@@ -75,38 +75,38 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
 
         public void AddOne(mdl myItem)
         {
-            context.Set<mdl>().Add(myItem);
-            context.SaveChanges();
+            db.Set<mdl>().Add(myItem);
+            db.SaveChanges();
         }
 
         public void UpdateOne(mdl myItem)
         {
-            context.Set<mdl>().Update(myItem);
-            context.SaveChanges();
+            db.Set<mdl>().Update(myItem);
+            db.SaveChanges();
         }
 
         public void DeleteOne(mdl myItem)
         {
-            context.Set<mdl>().Remove(myItem);
-            context.SaveChanges();
+            db.Set<mdl>().Remove(myItem);
+            db.SaveChanges();
         }
 
         public void AddList(IEnumerable<mdl> myList)
         {
-            context.Set<mdl>().AddRange(myList);
-            context.SaveChanges();
+            db.Set<mdl>().AddRange(myList);
+            db.SaveChanges();
         }
 
         public void UpdateList(IEnumerable<mdl> myList)
         {
-            context.Set<mdl>().UpdateRange(myList);
-            context.SaveChanges();
+            db.Set<mdl>().UpdateRange(myList);
+            db.SaveChanges();
         }
 
         public void DeleteList(IEnumerable<mdl> myList)
         {
-            context.Set<mdl>().RemoveRange(myList);
-            context.SaveChanges();
+            db.Set<mdl>().RemoveRange(myList);
+            db.SaveChanges();
         }
 
     }

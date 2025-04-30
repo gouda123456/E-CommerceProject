@@ -1,7 +1,4 @@
-using E_CommerceProject.MyServices;
-using E_CommerceProject.Data;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

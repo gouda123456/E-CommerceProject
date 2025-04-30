@@ -1,9 +1,4 @@
-﻿using e_commerce.Data.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
-
-namespace E_CommerceProject.Data
+﻿namespace E_CommerceProject.Data
 {
     public class database : IdentityDbContext<User>
     {
