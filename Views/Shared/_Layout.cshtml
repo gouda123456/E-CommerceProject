@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>XPremo | Online Store</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="~/js/swiperJs/swiper-bundle.min.css" asp-append-version="true" />
+
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" asp-append-version="true">
+
+    <!-- Link File CSS -->
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+</head>
+<body class="menu-side-in-bag">
+
+    <header>
+
+        <div class="header-top">
+            <div class="contanier">
+                <p> مرحبا بكم في متجر اكس بريمو</p>
+                <div class="link-top-heder">
+                    <a href="#">My Account</a>
+                    <a href="#">My Wishlist</a>
+                    <a href="#">Sign In</a>
+                    <a href="#">Compare</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-info">
+            <div class="contanier">
+                <img src="~/img/logo.png" alt="">
+
+                <div class="search-bar">
+                    <form action="">
+                        <input type="search" placeholder="ابحث عن طلبك...">
+                        <button class="btn-srch">بحث</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="price">
+                        <p>السلة :</p>
+                        <span>255.00 جنيه</span>
+                    </div>
+                    <a href="mycart.html"><i class="fa-solid fa-bag-shopping"></i> <span class="count-in-card">2</span></a>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="contanier">
+                <i id="open-side" class="fa-solid fa-bars"></i>
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html"> الرئيسة</a>
+
+                    </li>
+
+                    <li>
+                        <a href="features.html">الأجهزة الكهربائية</a>
+
+                        <div class="drobdwon">
+                            <ul><li><a href="betuflpage.html">غسالات</a></li></ul>
+                            <ul><li><a href="#">نلاجات</a></li></ul>
+                            <ul><li><a href="#">مكانس</a></li></ul>
+                            <ul><li><a href="#">شبابيك</a></li></ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="about.html"> الأدوات المنزلية</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">الموبايلات و اكسسواراتها</a>
+                    </li>
+                    <li><a href="index.html"> الملابس </a></li>
+
+                    <li><a href="betuflpage.html"> مستحضرات الجمال</a></li>
+                    <li><a href="index.html"> المفروشات</a></li>
+
+
+
+                </ul>
+                <a href="sign-up-page.html" class="sign-in-btn"><i class="fa-solid fa-user-plus"></i> انشاء حساب </a>
+
+
+            </div>
+        </div>
+
+
+    </header>
+
+    <section class="slide-sec contanier">
+        <div id="side-bar" class="side-bar">
+            <h5><i class="fa-solid fa-bars"></i> SHOP BY DEPARTMENT</h5>
+            <img class="logo-slide" src="~/img/logo.png" alt="">
+            <i id="btn-close" class="fa-solid fa-bars fa-times"></i>
+            <ul class="side-links">
+                <asp-action href="#">
+                    <li>الاجهزة المنزلية</li>
+                </asp-action>
+                <a href="#">
+                <li>العاب الأطفال</li></a>
+                <a href="#">
+                <li>الشواحن</li></a>
+                <a href="#">
+                <li>المفروشات</li></a>
+                <a href="#">
+                <li>الهواتف</li></a>
+                <a href="#">
+                <li>الملابس</li></a>
+                <a href="#">
+                <li>الأحذية</li></a>
+                <a href="#">
+                <li>اكسسوارات</li></a>
+                <a href="#">
+                <li>مستحضرات التجميل</li></a>
+                <a href="#">
+                <li>التلفزيونات</li></a>
+
+            </ul>
+        </div>
+    </section>
+
+
+
+    @RenderBody()
+
+
+
+    <div class="back-top">
+        <a href="#">الرجوع للأعلي</a>
+    </div>
+
+    <footer>
+        <div class="contanier">
+            <div class="top-footer">
+                <div class="row">
+                    <img src="~/img/logo.png" alt="">
+                    <div class="hotline">
+
+                        <div class="hotline-text">
+                            <h6>خدمة عملاء 24/7</h6>
+                            <span>(+100) 123 456 7890</span>
+                        </div>
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                </div>
+                <div class="small-row">
+                    <h6> اعرف المزيد عنا</h6>
+                    <div class="links-row">
+                        <a href="#"> <i class="fa-solid fa-angle-left"></i>معلومات عن اكسبريمو </a>
+                        <a href="#"><i class="fa-solid fa-angle-left"></i>الشحن و التوصيل </a>
+
+                    </div>
+                </div>
+
+                <div class="small-row">
+                    <h6> تسوق معنا</h6>
+                    <div class="links-row">
+                        <a href="#"><i class="fa-solid fa-angle-left"></i>حسابك</a>
+                        <a href="#"> <i class="fa-solid fa-angle-left"></i>مشترياتك</a>
+                        <a href="#"> <i class="fa-solid fa-angle-left"></i>عناوينك</a>
+                        <a href="#"> <i class="fa-solid fa-angle-left"></i>قوائمك</a>
+                    </div>
+                </div>
+
+                <div class="small-row">
+                    <h6> دعنا نساعدك</h6>
+                    <div class="links-row">
+                        <a href="#"><i class="fa-solid fa-angle-left"></i>المساعدة و الدعم</a>
+                        <a href="#"><i class="fa-solid fa-angle-left"></i>تتبع الطلب</a>
+                        <a href="#"><i class="fa-solid fa-angle-left"></i>سياسة الاسترجاع</a>
+                        <a href="#"><i class="fa-solid fa-angle-left"></i>الشروط و الأحكام </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="bottom-footer">
+            <div class="contanier">
+                <p>Copyright &copy; <span>Topico. </span>Powered by <span>Mahmoud Reda</span></p>
+                <div class="payment">
+                    <img src="~/img/payment-1.png" alt="">
+                    <img src="~/img/payment-2.png" alt="">
+                    <img src="~/img/payment-3.png" alt="">
+                    <img src="~/img/payment-4.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="~/js/swiperJs/swiper-bundle.min.js" asp-append-version="true"></script>
+
+    <!-- Linke File JS -->
+    <script src="~/js/main.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
