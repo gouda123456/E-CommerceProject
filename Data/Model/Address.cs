@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using E_CommerceProject.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace e_commerce.Data.Models;
+namespace E_CommerceProject.Data.Models;
 
 public partial class Address
 {

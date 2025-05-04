@@ -1,4 +1,6 @@
-﻿namespace E_CommerceProject.Data
+﻿using E_CommerceProject.Data.Models;
+
+namespace E_CommerceProject.Data
 {
     public class database : IdentityDbContext<User>
     {

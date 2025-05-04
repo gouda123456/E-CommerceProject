@@ -9,15 +9,15 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.IRepo
 
         T SelectOne(Expression<Func<T, bool>> match);
 
-        IEnumerable<T> FindAll();
+        IEnumerable<T> GetAll();
 
-        IEnumerable<T> FindAll(params string[] agers);
+        IEnumerable<T> GetAll(params string[] agers);
 
         Task<T> FindByIdAsync(int id);
 
-        Task<IEnumerable<T>> FindAllAsync();
+        Task<IEnumerable<T>> GetAllAsync();
 
-        Task<IEnumerable<T>> FindAllAsync(params string[] agers);
+        Task<IEnumerable<T>> GetAllAsync(params string[] agers);
 
         void AddOne(T myItem);
 

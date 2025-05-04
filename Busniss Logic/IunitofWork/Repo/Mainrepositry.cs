@@ -26,7 +26,7 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
             return db.Set<mdl>().SingleOrDefault(match);
         }
 
-        public IEnumerable<mdl> FindAll()
+        public IEnumerable<mdl> GetAll()
         {
             return db.Set<mdl>().ToList();
         }
@@ -36,12 +36,17 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
             return await db.Set<mdl>().FindAsync(id);
         }
 
-        public async Task<IEnumerable<mdl>> FindAllAsync()
+        public async Task<IEnumerable<mdl>> GetAllAsync()
         {
+            foreach (var item in typeof(mdl).GetProperties().Where(p => p.GetType() == typeof(string)))
+            {
+                var value = item.GetValue(this);
+                //my action
+            }
             return await db.Set<mdl>().ToListAsync();
         }
 
-        public IEnumerable<mdl> FindAll(params string[] agers)
+        public IEnumerable<mdl> GetAll(params string[] agers)
         {
             IQueryable<mdl> query = db.Set<mdl>();
 
@@ -56,7 +61,7 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
             return query.ToList();
         }
 
-        public async Task<IEnumerable<mdl>> FindAllAsync(params string[] agers)
+        public async Task<IEnumerable<mdl>> GetAllAsync(params string[] agers)
         {
             IQueryable<mdl> query = db.Set<mdl>();
 

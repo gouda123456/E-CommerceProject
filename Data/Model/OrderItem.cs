@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace e_commerce.Data.Models;
+namespace E_CommerceProject.Data.Models;
 
 public partial class OrderItem
 {

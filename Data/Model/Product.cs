@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace e_commerce.Data.Models;
+namespace E_CommerceProject.Data.Models;
 
 public partial class Product
 {
@@ -38,7 +38,7 @@ public partial class Product
     public double AverageRating { get; set; }
 
     [InverseProperty("Product")]
-    public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
+    public virtual ICollection<CartItem>? CartItems { get; set; } = new List<CartItem>();
 
     [ForeignKey("CategoryId")]
     [InverseProperty("Products")]
@@ -49,14 +49,14 @@ public partial class Product
     public virtual Discount Discount { get; set; } = null!;
 
     [InverseProperty("Product")]
-    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+    public virtual ICollection<OrderItem>? OrderItems { get; set; } = new List<OrderItem>();
 
     [InverseProperty("Product")]
-    public virtual ICollection<ProductImage> ProductImages { get; set; } = new List<ProductImage>();
+    public virtual ICollection<ProductImage>? ProductImages { get; set; } = new List<ProductImage>();
 
     [InverseProperty("Product")]
-    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
+    public virtual ICollection<Review>? Reviews { get; set; } = new List<Review>();
 
     [InverseProperty("Product")]
-    public virtual ICollection<StockMovement> StockMovements { get; set; } = new List<StockMovement>();
+    public virtual ICollection<StockMovement>? StockMovements { get; set; } = new List<StockMovement>();
 }

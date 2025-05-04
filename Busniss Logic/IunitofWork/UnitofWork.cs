@@ -1,5 +1,5 @@
-﻿using e_commerce.Data.Models;
-using E_CommerceProject.Busniss_Logic.IunitofWork.IRepo;
+﻿using E_CommerceProject.Busniss_Logic.IunitofWork.IRepo;
+using E_CommerceProject.Data.Models;
 
 namespace E_CommerceProject.Busniss_Logic.IunitofWork
 {

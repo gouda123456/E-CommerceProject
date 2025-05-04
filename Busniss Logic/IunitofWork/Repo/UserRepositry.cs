@@ -9,16 +9,13 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
         public database db { get; set; }
         public UserManager<User> usermanager { get; set; }
 
-        public UserRepositry(database db , UserManager<User> manager) : base(db)
+        public UserRepositry(database database , UserManager<User> manager) : base(database)
         {
-            this.db = db;
+            db = database;
             usermanager = manager;
 
         }
 
-
-
-        
 
         public async Task<User?> FindByEmailAsync(string email)
         {
@@ -26,8 +23,6 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
 
             return user;
         }
-
-        
 
         public async Task<User?> FindByPhoneAsync(string phone)
         {
@@ -38,23 +33,23 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
             return user;
         }
 
-        
-
         public async Task<User?> FindByUserNameAsync(string userName)
         {
             var user = await usermanager.FindByNameAsync(userName);
-
             return user;
         }
 
         public async Task<List<User>> GetAllUsers()
         {
-            throw new NotImplementedException();
+            return await usermanager.Users.ToListAsync();
         }
 
         public async Task<List<User>> GetUsersByRole(string Role)
         {
-            throw new NotImplementedException();
+            var users = await usermanager.GetUsersInRoleAsync(Role);
+            return users.ToList();
         }
+
+
     }
 }
