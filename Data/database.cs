@@ -32,6 +32,23 @@ namespace E_CommerceProject.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Name = "Admin",
+                    NormalizedName = "admin",
+                    ConcurrencyStamp = Guid.NewGuid().ToString(),
+                },
+                 new IdentityRole()
+                 {
+                     Id = Guid.NewGuid().ToString(),
+                     Name = "User",
+                     NormalizedName = "user",
+                     ConcurrencyStamp = Guid.NewGuid().ToString(),
+                 }
+                );
+
             modelBuilder.Entity<Address>(entity =>
             {
                 entity.HasOne(d => d.Region).WithMany(p => p.Addresses)

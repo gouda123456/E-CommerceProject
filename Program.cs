@@ -1,6 +1,8 @@
+﻿
 
+using Castle.Core.Smtp;
 
-    var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
@@ -10,6 +12,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 builder.Services.AddMyServices(builder.Configuration);
+
+builder.Services.AddTransient<IEmailSender, EmailSenderConfirm>();
+
 
 #endregion
 
@@ -39,6 +44,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}").WithStaticAssets();
+
+app.UseEndpoints(endpoints => endpoints.MapRazorPages());
 
 app.MapRazorPages();
 

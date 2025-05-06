@@ -1,9 +1,11 @@
 using System.Diagnostics;
 using E_CommerceProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_CommerceProject.Controllers
 {
+    //[Authorize(Roles = RoleViewModel.RoleUser)]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

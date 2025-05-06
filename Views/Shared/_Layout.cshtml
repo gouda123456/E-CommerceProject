@@ -28,9 +28,11 @@
                     <a href="#">My Wishlist</a>
                     <a href="#">Sign In</a>
                     <a href="#">Compare</a> *@
-                    <partial name="_LoginPartial" />
+                   @*  <partial name="_LoginPartial" /> *@
+                   
                 </div>
             </div>
+            
         </div>
 
         <div class="header-info">
@@ -88,10 +90,27 @@
                     <li><a href="betuflpage.html"> مستحضرات الجمال</a></li>
                     <li><a href="index.html"> المفروشات</a></li>
 
+                    
 
+                   
 
                 </ul>
-                <a href="sign-up-page.html" class="sign-in-btn"><i class="fa-solid fa-user-plus"></i> انشاء حساب </a>
+
+                <partial name="_LoginPartial" />
+
+              @*   <div style="display: flex; gap: 10px;">
+                @if (User.Identity.IsAuthenticated != true)
+                {
+                    @* <a href="/Account/SignIn" class="sign-in-btn"><i class="fa-solid fa-user-plus"></i> انشاء حساب </a> 
+                    <a asp-area="Identity" asp-page="/Account/Register" class="sign-in-btn"><i class="fa-solid fa-user-plus"></i> انشاء حساب </a>
+                        <a asp-area="Identity" asp-page="/Account/Register" class="sign-in-btn"><i class="fa-solid fa-user-plus"></i> انشاء حساب </a>
+                }
+                @if (User.Identity.IsAuthenticated == true)
+                {
+                    <a class="sign-in-btn" asp-action="LogOut" asp-controller="Account"><i class="fa-solid fa-user-plus"></i> LogOut</a>
+                }
+                </div>
+                *@
 
 
             </div>

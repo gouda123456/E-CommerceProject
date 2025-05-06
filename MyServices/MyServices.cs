@@ -13,7 +13,8 @@
             services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddDefaultUI()
                 .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<database>();
+                .AddEntityFrameworkStores<database>()
+                .AddDefaultTokenProviders();
 
 
             services.AddScoped<IUnitofWork,UnitofWork>();

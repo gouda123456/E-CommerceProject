@@ -4,6 +4,7 @@ using E_CommerceProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_CommerceProject.Migrations
 {
     [DbContext(typeof(database))]
-    partial class databaseModelSnapshot : ModelSnapshot
+    [Migration("20250505153121_CreateDATABASE")]
+    partial class CreateDATABASE
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -801,22 +804,6 @@ namespace E_CommerceProject.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "8031380b-9ffe-4f72-a724-904630a3b971",
-                            ConcurrencyStamp = "87fbdfe7-6f31-46bf-9763-ac322e094af9",
-                            Name = "Admin",
-                            NormalizedName = "admin"
-                        },
-                        new
-                        {
-                            Id = "e9c016c9-a4ef-4e90-a5ad-8a725805e1dd",
-                            ConcurrencyStamp = "6a3fffbc-53ce-4cd5-afa2-d65f2f0d630d",
-                            Name = "User",
-                            NormalizedName = "user"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

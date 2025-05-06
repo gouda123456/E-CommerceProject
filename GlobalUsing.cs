@@ -17,3 +17,5 @@ global using E_CommerceProject.Busniss_Logic.IunitofWork;
 
 global using E_CommerceProject.Data.Models;
 
+global using E_CommerceProject.ViewModel;
+
