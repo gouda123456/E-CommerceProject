@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using E_CommerceProject.ViewModel;
 
 namespace E_CommerceProject.Areas.Identity.Pages.Account
 {

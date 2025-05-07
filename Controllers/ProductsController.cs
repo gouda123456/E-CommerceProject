@@ -21,8 +21,7 @@ namespace E_CommerceProject.Controllers
             this.work = work;
         }
 
-        // GET: Products
-// HEAD
+
         public async Task<IActionResult> Index()
         {
             var data = work.ProductRepo.GetAll("Category", "Discount");
@@ -32,6 +31,23 @@ namespace E_CommerceProject.Controllers
 //
         //public async Task<IActionResult> Index() => View(await work.ProductRepo.GetAllAsync());
 //edc6caccdb1b093ec418c3561f6c4c7c0941da46
+
+
+
+        public async Task<IActionResult> Index(string? searth)
+        {
+            if (!string.IsNullOrEmpty(searth))
+            {
+                var products = await work.ProductRepo.GetAllAsync();
+                var filteredProducts = products.Where(p => p.ProductName.Contains(searth)).ToList();
+                return View(filteredProducts);
+            }
+
+            return View(await work.ProductRepo.GetAllAsync());
+        }
+
+
+
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
