@@ -21,18 +21,12 @@ namespace E_CommerceProject.Controllers
             this.work = work;
         }
 
-        // GET: Products
-<<<<<<< HEAD
-        public async Task<IActionResult> Index()
-        {
-            var data = work.ProductRepo.GetAll("Category", "Discount");
-            var database = db.Products.Include(p => p.Category).Include(p => p.Discount);
-            return View(await database.ToListAsync());
-        }
-=======
+        // GET: Products<<<<<<< HEAD
+        
+
         public async Task<IActionResult> Index() => View(await work.ProductRepo.GetAllAsync());
 
->>>>>>> edc6caccdb1b093ec418c3561f6c4c7c0941da46
+
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)

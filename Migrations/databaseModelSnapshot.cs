@@ -101,7 +101,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Addresses");
+                    b.ToTable("Addresses", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.BankFee", b =>
@@ -132,7 +132,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("PaymentMethodId");
 
-                    b.ToTable("BankFees");
+                    b.ToTable("BankFees", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.Cart", b =>
@@ -169,7 +169,7 @@ namespace E_CommerceProject.Migrations
                     b.HasIndex(new[] { "UserId" }, "IX_Cart")
                         .IsUnique();
 
-                    b.ToTable("Cart");
+                    b.ToTable("Cart", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.CartItem", b =>
@@ -206,7 +206,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("CartItems", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.Category", b =>
@@ -248,7 +248,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("ParentCategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.Discount", b =>
@@ -293,7 +293,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("DiscountTypeId");
 
-                    b.ToTable("Discounts");
+                    b.ToTable("Discounts", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.DiscountType", b =>
@@ -312,7 +312,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DiscountTypes");
+                    b.ToTable("DiscountTypes", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.Order", b =>
@@ -377,7 +377,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.OrderItem", b =>
@@ -410,7 +410,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.OrderStatus", b =>
@@ -429,7 +429,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatus");
+                    b.ToTable("OrderStatus", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.PaymentDetail", b =>
@@ -468,7 +468,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("PaymentDetails");
+                    b.ToTable("PaymentDetails", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.PaymentMethod", b =>
@@ -487,7 +487,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PaymentMethods");
+                    b.ToTable("PaymentMethods", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.PaymentStatus", b =>
@@ -506,7 +506,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PaymentStatus");
+                    b.ToTable("PaymentStatus", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.Product", b =>
@@ -559,7 +559,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("DiscountId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.ProductImage", b =>
@@ -584,7 +584,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.Review", b =>
@@ -623,7 +623,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.ShippingRegion", b =>
@@ -657,7 +657,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ShippingRegions");
+                    b.ToTable("ShippingRegions", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.Models.StockMovement", b =>
@@ -695,7 +695,7 @@ namespace E_CommerceProject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("StockMovements");
+                    b.ToTable("StockMovements", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceProject.Data.User", b =>
@@ -801,22 +801,6 @@ namespace E_CommerceProject.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "8031380b-9ffe-4f72-a724-904630a3b971",
-                            ConcurrencyStamp = "87fbdfe7-6f31-46bf-9763-ac322e094af9",
-                            Name = "Admin",
-                            NormalizedName = "admin"
-                        },
-                        new
-                        {
-                            Id = "e9c016c9-a4ef-4e90-a5ad-8a725805e1dd",
-                            ConcurrencyStamp = "6a3fffbc-53ce-4cd5-afa2-d65f2f0d630d",
-                            Name = "User",
-                            NormalizedName = "user"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
