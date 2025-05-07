@@ -46,34 +46,11 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
             return await db.Set<mdl>().ToListAsync();
         }
 
-        public IEnumerable<mdl> GetAll(params string[] agers)
+
+
+        async Task<IEnumerable<mdl>> IMainrepositry<mdl>.GetAllAsync(Expression<Func<mdl, bool>> expression)
         {
-            IQueryable<mdl> query = db.Set<mdl>();
-
-            if (agers.Length > 0)
-            {
-                foreach (var ager in agers)
-                {
-                    query = query.Include(ager);
-                }
-            }
-
-            return query.ToList();
-        }
-
-        public async Task<IEnumerable<mdl>> GetAllAsync(params string[] agers)
-        {
-            IQueryable<mdl> query = db.Set<mdl>();
-
-            if (agers.Length > 0)
-            {
-                foreach (var ager in agers)
-                {
-                    query = query.Include(ager);
-                }
-            }
-
-            return await query.ToListAsync();
+            return await db.Set<mdl>().Where(expression).AsNoTracking().ToListAsync();
         }
 
         //=========================================================================//
@@ -114,5 +91,6 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork.Repo
             db.SaveChanges();
         }
 
+        
     }
 }
