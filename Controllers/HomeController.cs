@@ -9,14 +9,31 @@ namespace E_CommerceProject.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly database db;
+        private readonly IUnitofWork work;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,database db,IUnitofWork work)
         {
             _logger = logger;
+            this.db = db;
+            this.work = work;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string? searth)
         {
+            if (!string.IsNullOrEmpty(searth))
+            {
+                var products = await work.ProductRepo.GetAllAsync();
+                var filteredProducts = products.Where(p => p.ProductName.Contains(searth)).ToList();
+                return View(filteredProducts);
+            }
+
+            return View(await work.ProductRepo.GetAllAsync());
+        }
+
+        public IActionResult Searth(string searth)
+        {
+            
             return View();
         }
 
