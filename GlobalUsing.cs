@@ -19,3 +19,5 @@ global using E_CommerceProject.Data.Models;
 
 global using E_CommerceProject.ViewModel;
 
+global using E_CommerceProject.ViewModel.DashBordViewModel;
+

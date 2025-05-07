@@ -15,6 +15,31 @@
 
     <!-- Link File CSS -->
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+
+    <style>
+        .dashboard-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+            .dashboard-button:hover {
+                background-color: slategrey;
+                transform: translateY(-2px);
+            }
+
+            .dashboard-button:active {
+                transform: scale(0.98);
+            }
+    </style>
 </head>
 <body class="menu-side-in-bag">
 
@@ -29,6 +54,11 @@
                     <a href="#">Sign In</a>
                     <a href="#">Compare</a> *@
                    @*  <partial name="_LoginPartial" /> *@
+                   
+                    @if (User.IsInRole(RoleViewModel.RoleAdmin))
+                    {
+                        <a asp-controller="MainDashBord" asp-action="Index" class="dashboard-button">لوحة التحكم</a>
+                    }
                    
                 </div>
             </div>
