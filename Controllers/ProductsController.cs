@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using E_CommerceProject.Data;
 using E_CommerceProject.Busniss_Logic.IunitofWork;
+using Microsoft.IdentityModel.Tokens;
 
 namespace E_CommerceProject.Controllers
 {
@@ -14,16 +15,18 @@ namespace E_CommerceProject.Controllers
     {
         private readonly database db;
         private readonly IUnitofWork work;
+        private string? searth;
 
-        public ProductsController(database context , IUnitofWork work)
+        public ProductsController(database context, IUnitofWork work)
         {
             db = context;
-            this.work = work;
+            work = work;
         }
-
 
         public async Task<IActionResult> Index()
         {
+<<<<<<< HEAD
+=======
             var data = work.ProductRepo.GetAllAsync();
             var database = db.Products.Include(p => p.Category).Include(p => p.Discount);
             return View(await database.ToListAsync());
@@ -36,6 +39,7 @@ namespace E_CommerceProject.Controllers
 
         public async Task<IActionResult> Index(string? searth)
         {
+>>>>>>> 5296fbae4d32a61f8f8d755e8728da7075e40fb3
             if (!string.IsNullOrEmpty(searth))
             {
                 var products = await work.ProductRepo.GetAllAsync();
@@ -46,10 +50,8 @@ namespace E_CommerceProject.Controllers
             return View(await work.ProductRepo.GetAllAsync());
         }
 
+        public async Task<IActionResult> Index1() => View(await work.ProductRepo.GetAllAsync());
 
-
-
-        // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

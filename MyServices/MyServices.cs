@@ -17,7 +17,7 @@
                 .AddDefaultTokenProviders();
 
 
-            services.AddScoped<IUnitofWork,UnitofWork>();
+            services.AddScoped<IUnitofWork, UnitofWork>();
 
 
         }

@@ -19,14 +19,14 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork
             this.PaymentDetailRepo = new Mainrepositry<PaymentDetail>(db);
             this.PaymentMethodRepo = new Mainrepositry<PaymentMethod>(db);
             this.PaymentStatusRepo = new Mainrepositry<PaymentStatus>(db);
-            this.UserRepo = new UserRepositry(db ,manager );
+            this.UserRepo = new UserRepositry(db, manager);
             //this.ProductRepo = new Mainrepositry<Product>(db);
 
         }
 
         private bool disposedValue;
 
-        public IUserRepositry UserRepo { get; private set; } 
+        public IUserRepositry UserRepo { get; private set; }
 
         public IMainrepositry<Address> AddressRepo { get; private set; }
 

@@ -127,6 +127,7 @@ namespace E_CommerceProject.Areas.Identity.Pages.Account
 
                 user.FullName = Input.Name;
                 user.PhoneNumber = Input.PhoneNumber;
+                user.EmailConfirmed = true;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
