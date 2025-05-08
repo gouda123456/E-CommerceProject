@@ -23,16 +23,15 @@ namespace E_CommerceProject.Controllers
             work = work;
         }
 
-<<<<<<< HEAD
+
         public async Task<IActionResult> Index()
         {
-<<<<<<< HEAD
-=======
+
             var data = work.ProductRepo.GetAllAsync();
             var database = db.Products.Include(p => p.Category).Include(p => p.Discount);
             return View(await database.ToListAsync());
         }
-=======
+
 
         //public async Task<IActionResult> Index()
         //{
@@ -40,7 +39,7 @@ namespace E_CommerceProject.Controllers
         //    var database = db.Products.Include(p => p.Category).Include(p => p.Discount);
         //    return View(await database.ToListAsync());
         //}
->>>>>>> 02c2263e9164cd62ff4126adca1f6d80b1956ed0
+
 //
         //public async Task<IActionResult> Index() => View(await work.ProductRepo.GetAllAsync());
 //edc6caccdb1b093ec418c3561f6c4c7c0941da46
@@ -49,7 +48,7 @@ namespace E_CommerceProject.Controllers
 
         public async Task<IActionResult> Index(string? searth)
         {
->>>>>>> 5296fbae4d32a61f8f8d755e8728da7075e40fb3
+
             if (!string.IsNullOrEmpty(searth))
             {
                 var products = await work.ProductRepo.GetAllAsync();
