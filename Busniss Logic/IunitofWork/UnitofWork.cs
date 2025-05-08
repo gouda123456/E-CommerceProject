@@ -20,7 +20,12 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork
             this.PaymentMethodRepo = new Mainrepositry<PaymentMethod>(db);
             this.PaymentStatusRepo = new Mainrepositry<PaymentStatus>(db);
             this.UserRepo = new UserRepositry(db ,manager );
-            //this.ProductRepo = new Mainrepositry<Product>(db);
+            this.ProductRepo = new Mainrepositry<Product>(db);
+            this.ProductImageRepo = new Mainrepositry<ProductImage>(db);
+            this.ReviewRepo = new Mainrepositry<Review>(db);
+            this.ShippingRegionRepo = new Mainrepositry<ShippingRegion>(db);
+            this.StockMovementRepo = new Mainrepositry<StockMovement>(db);
+
 
         }
 

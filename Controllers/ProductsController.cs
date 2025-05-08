@@ -22,12 +22,12 @@ namespace E_CommerceProject.Controllers
         }
 
 
-        public async Task<IActionResult> Index()
-        {
-            var data = work.ProductRepo.GetAllAsync();
-            var database = db.Products.Include(p => p.Category).Include(p => p.Discount);
-            return View(await database.ToListAsync());
-        }
+        //public async Task<IActionResult> Index()
+        //{
+        //    var data = work.ProductRepo.GetAllAsync();
+        //    var database = db.Products.Include(p => p.Category).Include(p => p.Discount);
+        //    return View(await database.ToListAsync());
+        //}
 //
         //public async Task<IActionResult> Index() => View(await work.ProductRepo.GetAllAsync());
 //edc6caccdb1b093ec418c3561f6c4c7c0941da46
