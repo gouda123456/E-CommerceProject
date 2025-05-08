@@ -52,15 +52,17 @@ namespace E_CommerceProject.Busniss_Logic.IunitofWork
 
         public IMainrepositry<PaymentStatus> PaymentStatusRepo { get; private set; }
 
-        public IMainrepositry<Product> ProductRepo => throw new NotImplementedException();
+        
 
-        public IMainrepositry<ProductImage> ProductImageRepo => throw new NotImplementedException();
+        public IMainrepositry<Product> ProductRepo { get; private set; }
 
-        public IMainrepositry<Review> ReviewRepo => throw new NotImplementedException();
+        public IMainrepositry<ProductImage> ProductImageRepo { get; private set; }
 
-        public IMainrepositry<ShippingRegion> ShippingRegionRepo => throw new NotImplementedException();
+        public IMainrepositry<Review> ReviewRepo { get; private set; }
 
-        public IMainrepositry<StockMovement> StockMovementRepo => throw new NotImplementedException();
+        public IMainrepositry<ShippingRegion> ShippingRegionRepo { get; private set; }
+
+        public IMainrepositry<StockMovement> StockMovementRepo { get; private set; }
 
         protected virtual void Dispose(bool disposing)
         {
