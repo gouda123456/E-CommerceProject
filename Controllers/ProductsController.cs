@@ -24,7 +24,7 @@ namespace E_CommerceProject.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var data = work.ProductRepo.GetAll("Category", "Discount");
+            var data = work.ProductRepo.GetAllAsync();
             var database = db.Products.Include(p => p.Category).Include(p => p.Discount);
             return View(await database.ToListAsync());
         }
