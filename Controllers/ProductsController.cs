@@ -49,12 +49,7 @@ namespace E_CommerceProject.Controllers
         public async Task<IActionResult> Index(string? searth)
         {
 
-            if (!string.IsNullOrEmpty(searth))
-            {
-                var products = await work.ProductRepo.GetAllAsync();
-                var filteredProducts = products.Where(p => p.ProductName.Contains(searth)).ToList();
-                return View(filteredProducts);
-            }
+            
 
             return View(await work.ProductRepo.GetAllAsync());
         }
