@@ -49,8 +49,6 @@ namespace E_CommerceProject.Controllers
         public async Task<IActionResult> Index(string? searth)
         {
 
-            
-
             return View(await work.ProductRepo.GetAllAsync());
         }
 
